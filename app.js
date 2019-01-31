@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
 
@@ -11,6 +12,5 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.listen(3000, 'localhost', function () {
-    console.log('Server for HEROKU is up and running!');
-});
+var server = app.listen(port,function() {
+    console.log("app running on port 8080"); });
